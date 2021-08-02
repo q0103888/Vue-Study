@@ -1,20 +1,18 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
 import axios from 'axios'
 
-Vue.use(Vuex);
-
-export default new Vuex.Store({
-    state:{
-        userId:'user',
+export default{
+    namespaced:true,
+    state:()=>({
         reviews:[]
-    },
+    }),
     mutations:{
-        updateUserId(state, newId){
-            state.userId = newId;
-        },
         updateReviews(state, reviews){
             state.reviews = reviews
+        }
+    },
+    getters:{
+        reviewCount(state /* , getters, rootState */){
+            return state.reviews.length
         }
     },
     actions:{
@@ -27,10 +25,5 @@ export default new Vuex.Store({
                 console.log(err)
             })
         }
-    },
-    getters:{
-        reviewCount(state /* , getters */){
-            return state.reviews.length
-        }
     }
-});
+}
