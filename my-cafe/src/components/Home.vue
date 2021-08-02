@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <h1>Home</h1>
+        <h1>Welcome{{$store.state.userId}}</h1>
     </div>
 </template>
 

@@ -1,0 +1,13 @@
+module.exports={
+    devServer:{
+        proxy:{
+            '/api':{
+                target:'https://jsonplaceholder.typicode.com/comments',
+                changeOrigin:true,
+                pathRewrite:{
+                    '^/api':''
+                }
+            }
+        }
+    }
+}
