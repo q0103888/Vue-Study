@@ -7,7 +7,7 @@
                     <v-row>
                         <v-col v-for="book in props.items" :key="book.bookId" cols="4">
                             <v-card >
-                                <v-img max-height="150" contain :src="book.cover"/>
+                                <v-img max-height="250" contain :src="book.cover"/>
                                 <v-divider></v-divider>
                                 <v-card-title>
                                     <router-link :to="'/books/'+book.bookId">{{book.title}}</router-link>
