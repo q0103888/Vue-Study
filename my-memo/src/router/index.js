@@ -8,15 +8,6 @@ import Signup from '../views/Signup.vue'
 
 Vue.use(VueRouter)
  
-const auth=(to, from, next)=>{
-  if(to.matched.some((record)=>record.meta.requiresAuth)){
-    if(localStorage.getItem('accessToken')==null){
-      alert('Signin please')
-      next('/signin')
-    }
-  }
-}
-
 const routes = [
   {path: '/', name:'Home', component: Home, meta:{requiresAuth:true}},
   {path: '/add', name:'Add', component: Add, meta:{requiresAuth:true}},
