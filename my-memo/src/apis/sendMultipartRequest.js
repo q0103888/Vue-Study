@@ -11,7 +11,8 @@ instance.interceptors.request.use(
             config.headers.Authorization=token
         else
             console.log('No token')
-        return config
+        config.headers['Content-Type']='multipart/from-data';
+        return config;
     },
     // 요청 에러 처리
     (error)=>{
@@ -20,7 +21,7 @@ instance.interceptors.request.use(
 );
 
 instance.interceptors.response.use(
-    // http status가 200인 경우
+    //htto status가 200인 경우
     (response)=>{
         return response;
     },
